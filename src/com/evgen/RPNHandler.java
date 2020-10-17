@@ -47,7 +47,11 @@ public final class RPNHandler {
         }
         return queue;
     }
-
+    /**
+     * Метод для вычисления выражения в обратной польской записи.
+     * Умеет работать, в том числе, с выражениями типа 6 + VI
+     *
+     */
     public static String evalRPN(ArrayDeque<String> RPNExpression, LiteralType resultType) {
         String token;
         double result;
