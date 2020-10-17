@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final boolean LIMITED_FUNCTIONALITY = false; // TODO: Вырезать эту переменную/её использование и сами "ограничения"
+    public static final boolean LIMITED_FUNCTIONALITY = true; // TODO: Вырезать эту переменную/её использование и сами "ограничения"
 
     public static void main(String[] args) {
 
@@ -62,7 +62,7 @@ public class Main {
             System.out.println(input + " = " + output);       //вывод выражения с ответом
 
             System.out.println("Повторить? (Да/...)");
-            if(!in.nextLine().equals("ДА")) {
+            if(!in.nextLine().equalsIgnoreCase("да")) {
                 keepCalculating = false;
                 System.out.println("Всего хорошего!");
             }
