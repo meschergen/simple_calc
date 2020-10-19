@@ -34,16 +34,21 @@ public class Main {
         boolean keepCalculating = true;
         boolean isValid;
 
-        System.out.println("Приложение Калькулятор v0.3\n Доступные операции [+/*-] вида '1 + 2' ");
+        if(LIMITED_FUNCTIONALITY) {
+            System.out.println("Приложение Калькулятор v0.3\n Доступные операции [+/*-] вида '1 + 2' \n");
+        } else {
+            System.out.println("Приложение Калькулятор v0.3 unlimited \n Доступные операции [+/*-] вида '(13 - 4 * 8 + 24 ) / (1 + 2 * 4 - 3)' ");
+        }
+        System.out.println(" Одновременный ввод римксих И десятичных числел, в одной строке, недопустим");
 
         while(keepCalculating) {
-            System.out.print("Введите операцию: ");
+            System.out.print("Введите выражение: ");
             do {
                 input = in.nextLine();
                 ep = new ExpressionParser(input);
                 isValid = ep.isValidExpression();
 
-                if(!isValid) {System.out.println("Некорректный вид операции! Повторите ввод!(или введите EXIT, для выхода)");}
+                if(!isValid) {System.out.println("Некорректный вид выражения! Повторите ввод!(или введите EXIT, для выхода)");}
             } while(!isValid);       // пока ввод некорректен
 
             //input = "(13 - 4 * 8 + 24 ) / (1 + 2 * 4 - 3)"; // = 0.83
